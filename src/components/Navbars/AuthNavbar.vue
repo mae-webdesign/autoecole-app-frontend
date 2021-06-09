@@ -12,7 +12,7 @@
           class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
           to="/"
         >
-          Vue Notus
+          Izidi Autoécole
         </router-link>
         <button
           class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -31,18 +31,44 @@
           <li class="flex items-center">
             <a
               class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-              href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus?ref=vn-auth-navbar"
+              href="tel:+262269610880"
             >
               <i
-                class="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
+                class="lg:text-blueGray-200 text-blueGray-400 fa fa-phone-alt text-lg leading-lg mr-2"
               />
-              Docs
+              +262-269-610-880
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a
+              class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="mailto:contact@izdi-permis.fr"
+            >
+              <i
+                class="lg:text-blueGray-200 text-blueGray-400 fa fa-comments text-lg leading-lg mr-2"
+              />
+              contact@izdi-permis.fr
             </a>
           </li>
         </ul>
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
           <li class="flex items-center">
-            <PagesDropdown />
+            <!-- <PagesDropdown /> -->
+            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">
+              Éthique
+            </a>
+          </li>
+          <li class="flex items-center">
+            <!-- <PagesDropdown /> -->
+            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">
+              Tarifs
+            </a>
+          </li>
+          <li class="flex items-center">
+            <!-- <PagesDropdown /> -->
+            <a class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">
+              Équipe
+            </a>
           </li>
           <li class="flex items-center">
             <a
@@ -53,7 +79,7 @@
               <i
                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"
               />
-              <span class="lg:hidden inline-block ml-2">Share</span>
+              <span class="lg:hidden inline-block ml-2">Partager</span>
             </a>
           </li>
 
@@ -66,20 +92,7 @@
               <i
                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"
               />
-              <span class="lg:hidden inline-block ml-2">Tweet</span>
-            </a>
-          </li>
-
-          <li class="flex items-center">
-            <a
-              class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-              href="https://github.com/creativetimofficial/vue-notus?ref=vn-auth-navbar"
-              target="_blank"
-            >
-              <i
-                class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"
-              />
-              <span class="lg:hidden inline-block ml-2">Star</span>
+              <span class="lg:hidden inline-block ml-2">Twitter</span>
             </a>
           </li>
 
@@ -88,7 +101,7 @@
               class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
               type="button"
             >
-              <i class="fas fa-arrow-alt-circle-down"></i> Download
+              <i class="fa fa-car"></i> Tableau de bord
             </button>
           </li>
         </ul>
@@ -97,7 +110,7 @@
   </nav>
 </template>
 <script>
-import PagesDropdown from "@/components/Dropdowns/PagesDropdown.vue";
+// import PagesDropdown from "@/components/Dropdowns/PagesDropdown.vue";
 export default {
   data() {
     return {
@@ -110,7 +123,7 @@ export default {
     },
   },
   components: {
-    PagesDropdown,
+    // PagesDropdown,
   },
 };
 </script>

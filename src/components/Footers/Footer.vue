@@ -22,9 +22,10 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap text-center lg:text-left">
         <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
+          <h4 class="text-3xl font-semibold">Gardons contact !</h4>
           <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-            Find us on any of these platforms, we respond 1-2 business days.
+            Retrouvez nous sur les réseaux sociaux.
+            <br>Nous répondons en 1 jour ouvré !
           </h5>
           <div class="mt-6 lg:mb-0 mb-6">
             <button
@@ -146,12 +147,12 @@
       >
         <div class="w-full md:w-4/12 px-4 mx-auto text-center">
           <div class="text-sm text-blueGray-500 font-semibold py-1">
-            Copyright © {{ date }} Vue Notus by
+            Copyright © {{ date }} "Izidi Auto École" by
             <a
-              href="https://www.creative-tim.com?ref=vn-footer"
+              href="https://www.mae-webdesign.fr"
               class="text-blueGray-500 hover:text-blueGray-800"
             >
-              Creative Tim
+              Mae Webdesign
             </a>
             .
           </div>

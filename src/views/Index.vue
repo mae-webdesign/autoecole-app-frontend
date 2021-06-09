@@ -8,20 +8,14 @@
         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
           <div class="pt-32 sm:pt-0">
             <h2 class="font-semibold text-4xl text-blueGray-600">
-              Vue Notus - A beautiful extension for Tailwind CSS.
+              Izidi, la meilleure autoécole du centre !
             </h2>
             <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-              Vue Notus is Free and Open Source. It does not change any of the
-              CSS from
-              <a
-                href="https://tailwindcss.com/?ref=creativetim"
-                class="text-blueGray-600"
-                target="_blank"
-              >
-                Tailwind CSS.
-              </a>
-              It features multiple HTML elements and it comes with dynamic
-              components for ReactJS, Vue and Angular.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut condimentum neque, 
+              id ornare magna. Ut quis tristique felis. Phasellus ut urna porta, fringilla ante eu, 
+              mollis est. Nullam porttitor maximus ligula nec convallis. Mauris nisi turpis, ornare 
+              id faucibus eget, pretium quis ex. Sed vitae nisi leo. Integer quis fermentum arcu. 
+              Fusce sit amet porttitor mauris.
             </p>
             <div class="mt-12">
               <a
@@ -748,6 +742,8 @@
   </div>
 </template>
 <script>
+// import { useStore } from 'vuex'
+
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
 
@@ -783,5 +779,9 @@ export default {
     IndexNavbar,
     FooterComponent,
   },
+  mounted() {
+    this.$store.commit("updateListStudents")
+  }
+
 };
 </script>

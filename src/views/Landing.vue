@@ -8,7 +8,7 @@
         <div
           class="absolute top-0 w-full h-full bg-center bg-cover"
           style="
-            background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+            background-image: url('https://cdn.pixabay.com/photo/2020/02/02/19/57/car-4814017_960_720.jpg');
           "
         >
           <span
@@ -21,12 +21,17 @@
             <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
               <div class="pr-12">
                 <h1 class="text-white font-semibold text-5xl">
-                  Your story starts with us.
+                  Réussissons ensemble votre projet
                 </h1>
                 <p class="mt-4 text-lg text-blueGray-200">
-                  This is a simple example of a Landing Page you can build using
-                  Vue Notus. It features multiple CSS components based on the
-                  Tailwind CSS design system.
+                  Izidi est une autoécole situé au <b>carrefour Chiconi</b> crée en 2020.
+                  Nous sommes une équipe de <b>moniteurs compétents et soucieux de la réussite</b> de nos élèves.</p>
+                <p class="mt-4 text-lg text-blueGray-200">
+                  Aujourd'hui à Mayotte le permis de conduire est un élément indispensable pour vous déplacer,
+                  pour travailler, c'est pour cela que nous faisons tout notre possible pour vous donner accès à la meilleure formation et
+                  ce avec des tarifs défiants toutes concurrences sur l'île.
+                  <!--  -->
+
                 </p>
               </div>
             </div>
@@ -66,10 +71,10 @@
                   >
                     <i class="fas fa-award"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Awarded Agency</h6>
+                  <h6 class="text-xl font-semibold">Notre fierté : votre réussite</h6>
                   <p class="mt-2 mb-4 text-blueGray-500">
-                    Divide details about your product or agency work into parts.
-                    A paragraph describing a feature will be enough.
+                    Nous avons un taux de réusste de 90% lors du premier passage à l'examen.
+                    Ceci est notre fierté et nous nous efforcons de garder la barre haute.
                   </p>
                 </div>
               </div>
@@ -85,14 +90,17 @@
                   >
                     <i class="fas fa-retweet"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Free Revisions</h6>
+                  <h6 class="text-xl font-semibold">Passez votre permis plus rapidement</h6>
                   <p class="mt-2 mb-4 text-blueGray-500">
-                    Keep you user engaged by providing meaningful information.
-                    Remember that by this time, the user is curious.
+                    La plupart de nos élèves passent le permis en quelques mois à Mayotte.
+                    Nous avons généralement plus de disponibilité que les autres autoécoles,
+                    grâce à cet avantage, vous pourrez prendre plus d'heures de conduites et ce
+                    plus régulièrement. En résumé, vous passerez plus rapidement votre permis chez nous.
                   </p>
                 </div>
               </div>
             </div>
+
 
             <div class="pt-6 w-full md:w-4/12 px-4 text-center">
               <div
@@ -104,10 +112,10 @@
                   >
                     <i class="fas fa-fingerprint"></i>
                   </div>
-                  <h6 class="text-xl font-semibold">Verified Company</h6>
+                  <h6 class="text-xl font-semibold">Tarifs compétitifs</h6>
                   <p class="mt-2 mb-4 text-blueGray-500">
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough. Keep you user engaged!
+                    Nous proposons des tarifs attractifs et abordables afin de permettre au plus grand nombre d'accéder
+                    au permis de conduire, ce même avec un budget limité. Nos prix sont disponible sur notre site.
                   </p>
                 </div>
               </div>
@@ -122,24 +130,21 @@
                 <i class="fas fa-user-friends text-xl"></i>
               </div>
               <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                Working with us is a pleasure
+                Nous sommes la 1ère autoécole en ligne à Mayotte
               </h3>
               <p
                 class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
               >
-                Don't let your uses guess by attaching tooltips and popoves to
-                any element. Just make sure you enable them first via
-                JavaScript.
+                Inscrivez-vous en ligne et téléverser directement vos pièces justificatives sur la plateforme.
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
               >
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. Just make sure you enable them first via JavaScript.
+                Vous pouvez également réservez vos heures de conduites en toute autonomie en précisant le lieu de rendez-vous.
+                Nous commencerons la conduite au lieux de rendez-vous et nous vous déposerons au lieux de rendez-vous.
               </p>
               <router-link to="/" class="font-bold text-blueGray-700 mt-8">
-                Check Vue Notus!
+                Accéder à notre plateforme en ligne !
               </router-link>
             </div>
 
@@ -149,7 +154,7 @@
               >
                 <img
                   alt="..."
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+                  src="https://cdn.pixabay.com/photo/2016/10/06/03/30/man-1718099_960_720.jpg"
                   class="w-full align-middle rounded-t-lg"
                 />
                 <blockquote class="relative p-8 mb-4">
@@ -165,12 +170,11 @@
                     ></polygon>
                   </svg>
                   <h4 class="text-xl font-bold text-white">
-                    Top Notch Services
+                    Une autoécole éthique
                   </h4>
                   <p class="text-md font-light mt-2 text-white">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    Tout part d'une volonté de faire mieux et d'être en accord avec nos principes :
+                    transparence, réduction de la consommation de papier et facilité grâce à notre plateforme en ligne.
                   </p>
                 </blockquote>
               </div>
@@ -206,7 +210,7 @@
               <img
                 alt="..."
                 class="max-w-full rounded-lg shadow-lg"
-                src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                src="https://cdn.pixabay.com/photo/2012/03/04/00/47/background-22069_960_720.jpg"
               />
             </div>
             <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
@@ -216,11 +220,9 @@
                 >
                   <i class="fas fa-rocket text-xl"></i>
                 </div>
-                <h3 class="text-3xl font-semibold">A growing company</h3>
+                <h3 class="text-3xl font-semibold">Nos tarifs</h3>
                 <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                  The extension comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and you're
-                  good to go.
+                  Voici notre offre de formation
                 </p>
                 <ul class="list-none mt-6">
                   <li class="py-2">
@@ -229,12 +231,28 @@
                         <span
                           class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
                         >
-                          <i class="fas fa-fingerprint"></i>
+                          <i class="fas fa-book"></i>
                         </span>
                       </div>
                       <div>
                         <h4 class="text-blueGray-500">
-                          Carefully crafted components
+                          Code de la route : 150€
+                        </h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-2">
+                    <div class="flex items-center">
+                      <div>
+                        <span
+                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
+                        >
+                          <i class="fas fa-book"></i>
+                        </span>
+                      </div>
+                      <div>
+                        <h4 class="text-blueGray-500">
+                          1h de conduite : 40€
                         </h4>
                       </div>
                     </div>
@@ -250,7 +268,23 @@
                       </div>
                       <div>
                         <h4 class="text-blueGray-500">
-                          Amazing page examples
+                          Forfait 5h : 194.99€
+                        </h4>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-2">
+                    <div class="flex items-center">
+                      <div>
+                        <span
+                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
+                        >
+                          <i class="fab fa-html5"></i>
+                        </span>
+                      </div>
+                      <div>
+                        <h4 class="text-blueGray-500">
+                          Forfait 10h : 379.99€
                         </h4>
                       </div>
                     </div>
@@ -265,7 +299,7 @@
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">Dynamic components</h4>
+                        <h4 class="text-blueGray-500">Forfait 20h : 740€</h4>
                       </div>
                     </div>
                   </li>
@@ -276,15 +310,17 @@
         </div>
       </section>
 
+      <section class="relative py-20 flex items-center justify-center">
+        <PricingTable/>
+      </section>
+
       <section class="pt-20 pb-48">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap justify-center text-center mb-24">
             <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold">Here are our heroes</h2>
+              <h2 class="text-4xl font-semibold">Notre équipe fantastique</h2>
               <p class="text-lg leading-relaxed m-4 text-blueGray-500">
-                According to the National Oceanic and Atmospheric
-                Administration, Ted, Scambos, NSIDClead scentist, puts the
-                potentially record maximum.
+                Vous conduirez certainement avec l'un de ces moniteurs, ne vous inquiétez pas, ils sont tous bienveillants !
               </p>
             </div>
           </div>
@@ -297,11 +333,11 @@
                   class="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Ryan Tompson</h5>
+                  <h5 class="text-xl font-bold">Abdou Madi</h5>
                   <p
                     class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
                   >
-                    Web Developer
+                    Moniteur
                   </p>
                   <div class="mt-6">
                     <button
@@ -334,11 +370,11 @@
                   class="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Romina Hadid</h5>
+                  <h5 class="text-xl font-bold">Habiba Sidi</h5>
                   <p
                     class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
                   >
-                    Marketing Specialist
+                    Moniteur
                   </p>
                   <div class="mt-6">
                     <button
@@ -365,11 +401,11 @@
                   class="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Alexa Smith</h5>
+                  <h5 class="text-xl font-bold">Sara Halidi</h5>
                   <p
                     class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
                   >
-                    UI/UX Designer
+                    Moniteur
                   </p>
                   <div class="mt-6">
                     <button
@@ -402,7 +438,7 @@
                   class="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div class="pt-6 text-center">
-                  <h5 class="text-xl font-bold">Jenna Kardi</h5>
+                  <h5 class="text-xl font-bold">Fatima Mbaé</h5>
                   <p
                     class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
                   >
@@ -466,7 +502,7 @@
           <div class="flex flex-wrap text-center justify-center">
             <div class="w-full lg:w-6/12 px-4">
               <h2 class="text-4xl font-semibold text-white">
-                Build something
+                Alors, prêt à embarquer ?
               </h2>
               <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
                 Put the potentially record low maximum sea ice extent tihs year
@@ -483,7 +519,7 @@
                 <i class="fas fa-medal text-xl"></i>
               </div>
               <h6 class="text-xl mt-5 font-semibold text-white">
-                Excelent Services
+                Véhicules récents et confortables
               </h6>
               <p class="mt-2 mb-4 text-blueGray-400">
                 Some quick example text to build on the card title and make up
@@ -497,7 +533,7 @@
                 <i class="fas fa-poll text-xl"></i>
               </div>
               <h5 class="text-xl mt-5 font-semibold text-white">
-                Grow your market
+                Le permis dans la poche
               </h5>
               <p class="mt-2 mb-4 text-blueGray-400">
                 Some quick example text to build on the card title and make up
@@ -511,7 +547,7 @@
                 <i class="fas fa-lightbulb text-xl"></i>
               </div>
               <h5 class="text-xl mt-5 font-semibold text-white">
-                Launch time
+                Des moniteurs compétents et bienveillants
               </h5>
               <p class="mt-2 mb-4 text-blueGray-400">
                 Some quick example text to build on the card title and make up
@@ -530,22 +566,22 @@
               >
                 <div class="flex-auto p-5 lg:p-10">
                   <h4 class="text-2xl font-semibold">
-                    Want to work with us?
+                    Vous souhaitez nous contacter ?
                   </h4>
                   <p class="leading-relaxed mt-1 mb-4 text-blueGray-500">
-                    Complete this form and we will get back to you in 24 hours.
+                    Que ce soit en tant qu'élève ou futur moniteur, nous répondons en 24h maximum.
                   </p>
                   <div class="relative w-full mb-3 mt-8">
                     <label
                       class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="full-name"
                     >
-                      Full Name
+                      Nom complet
                     </label>
                     <input
                       type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Full Name"
+                      placeholder="Nom complet"
                     />
                   </div>
 
@@ -582,7 +618,7 @@
                       class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
                     >
-                      Send Message
+                      Envoyer un message
                     </button>
                   </div>
                 </div>
@@ -598,6 +634,7 @@
 <script>
 import Navbar from "@/components/Navbars/AuthNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
+import PricingTable from "@/components/Pricing/PricingTable.vue"
 
 import team1 from "@/assets/img/team-1-800x800.jpg";
 import team2 from "@/assets/img/team-2-800x800.jpg";
@@ -616,6 +653,7 @@ export default {
   components: {
     Navbar,
     FooterComponent,
+    PricingTable
   },
 };
 </script>

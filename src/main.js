@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { createWebHistory, createRouter } from "vue-router";
-
+import {default as store} from "./store/index.js"
 // styles
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -31,7 +31,7 @@ import Register from "@/views/auth/Register.vue";
 
 import Landing from "@/views/Landing.vue";
 import Profile from "@/views/Profile.vue";
-import Index from "@/views/Index.vue";
+// import Index from "@/views/Index.vue";
 
 // routes
 
@@ -84,7 +84,7 @@ const routes = [
   },
   {
     path: "/",
-    component: Index,
+    component: Landing,
   },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
@@ -94,4 +94,5 @@ const router = createRouter({
   routes,
 });
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).use(store).mount("#app");
+// createApp(App).use(router).mount("#app");
