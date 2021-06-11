@@ -24,5 +24,9 @@ export default {
     HeaderStats,
     FooterAdmin,
   },
+  mounted() {
+    this.$store.commit("updateListInstructor");
+    this.$store.commit("updateListStudents");
+  }
 };
 </script>

@@ -15,7 +15,8 @@ const store = createStore({
         getServerUrl: state => {
             return state.backendUrl
         }
-    }
+    },
+    strict: process.env.NODE_ENV !== 'production'
 })
 
 export default store

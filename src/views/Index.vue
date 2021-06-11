@@ -780,7 +780,7 @@ export default {
     FooterComponent,
   },
   mounted() {
-    this.$store.commit("updateListStudents")
+    // this.$store.commit("updateListStudents")
   }
 
 };
