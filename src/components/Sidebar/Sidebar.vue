@@ -392,7 +392,7 @@
             no-underline
           "
         >
-          No Layout Pages
+          Session
         </h6>
         <!-- Navigation -->
 
@@ -411,7 +411,7 @@
               to="/landing"
             >
               <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
-              Landing Page
+              Liste
             </router-link>
           </li>
 
@@ -429,7 +429,7 @@
               to="/profile"
             >
               <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
-              Profile Page
+              Ajouter
             </router-link>
           </li>
         </ul>
