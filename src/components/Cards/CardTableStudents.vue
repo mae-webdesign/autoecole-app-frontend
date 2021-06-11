@@ -22,28 +22,46 @@
             Élèves
           </h3>
         </div>
-            <router-link
-              to="/admin/add-instructor"
-              v-slot="{ href, navigate, isActive }"
-            >
-              <a
-                :href="href"
-                @click="navigate"
-                class="text-xs uppercase py-3 font-bold block"
-                :class="[
-                  isActive
-                    ? 'text-emerald-500 hover:text-emerald-600'
-                    : 'text-blueGray-700 hover:text-blueGray-500',
-                ]"
-              >
-          <button
-          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-          type="button"
+        <router-link
+          to="/admin/add-students"
+          v-slot="{ href, navigate, isActive }"
         >
-            Ajouter un élève
-        </button>
-              </a>
-            </router-link>
+          <a
+            :href="href"
+            @click="navigate"
+            class="text-xs uppercase py-3 font-bold block"
+            :class="[
+              isActive
+                ? 'text-emerald-500 hover:text-emerald-600'
+                : 'text-blueGray-700 hover:text-blueGray-500',
+            ]"
+          >
+            <button
+              class="
+                bg-emerald-500
+                text-white
+                active:bg-emerald-600
+                font-bold
+                uppercase
+                text-xs
+                px-4
+                py-2
+                rounded
+                shadow
+                hover:shadow-md
+                outline-none
+                focus:outline-none
+                mr-1
+                ease-linear
+                transition-all
+                duration-150
+              "
+              type="button"
+            >
+              Ajouter un élève
+            </button>
+          </a>
+        </router-link>
       </div>
     </div>
     <div class="block w-full overflow-x-auto">
@@ -199,7 +217,7 @@
                   color === 'light' ? 'text-blueGray-600' : 'text-white',
                 ]"
               >
-                {{elem.firstname}} {{elem.lastname}}
+                {{ elem.firstname }} {{ elem.lastname }}
               </span>
             </th>
             <td
@@ -213,7 +231,7 @@
                 p-4
               "
             >
-              {{elem.phonenumber}}
+              {{ elem.phonenumber }}
             </td>
             <td
               class="
@@ -227,7 +245,7 @@
               "
             >
               <i class="fa fa-messages text-orange-500 mr-2"></i>
-              {{elem.email}}
+              {{ elem.email }}
             </td>
             <td
               class="
@@ -245,7 +263,7 @@
               </div>
             </td>
             <!-- <td -->
-              <!-- class="
+            <!-- class="
                 border-t-0
                 px-6
                 align-middle
@@ -255,7 +273,7 @@
                 p-4
               " -->
             <!-- > -->
-              <!-- <div class="flex items-center">
+            <!-- <div class="flex items-center">
                 <span class="mr-2">60%</span>
                 <div class="relative w-full">
                   <div
@@ -303,9 +321,7 @@ import TableDropdown from "@/components/Dropdowns/TableDropdown.vue";
 
 export default {
   data() {
-    return {
-      
-    };
+    return {};
   },
   computed: {
     ...mapState({
@@ -315,8 +331,7 @@ export default {
   components: {
     TableDropdown,
   },
-  methods: {
-  },
+  methods: {},
   props: {
     color: {
       default: "light",
@@ -326,7 +341,6 @@ export default {
       },
     },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
