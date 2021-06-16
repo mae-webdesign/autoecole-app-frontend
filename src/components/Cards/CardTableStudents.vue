@@ -231,7 +231,7 @@
                 p-4
               "
             >
-              {{ elem.phonenumber }}
+              {{ elem.phone }}
             </td>
             <td
               class="

@@ -21,6 +21,7 @@ import Dashboard from "@/views/admin/Dashboard.vue";
 import Settings from "@/views/admin/Settings.vue";
 import AddInstructor from "@/views/admin/AddInstructorForm.vue";
 import AddStudent from "@/views/admin/AddStudentForm.vue";
+import AddSession from "@/views/admin/AddSessions.vue";
 import Tables from "@/views/admin/Tables.vue";
 import Maps from "@/views/admin/Maps.vue";
 
@@ -37,6 +38,7 @@ import Profile from "@/views/Profile.vue";
 
 import InstructorTable from "@/views/admin-autoecole/instructors-table.vue"
 import StudentTable from "@/views/admin-autoecole/students-table.vue"
+import SessionViews from "@/views/admin/ListSessions.vue"
 
 // routes
 
@@ -68,7 +70,11 @@ const routes = [
       },
       {
         path: "/admin/sessions",
-        component: Dashboard,
+        component: SessionViews,
+      },
+      {
+        path: "/admin/add-sessions",
+        component: AddSession,
       },
       {
         path: "/admin/settings",

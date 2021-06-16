@@ -10,6 +10,9 @@ export default {
         },
         addInstructor: async (state, {payload}) => {
             await instance.post("/instructors/", payload)
+        },
+        deleteInstructor: async (state, {payload}) => {
+            await instance.delete("/instructors/" + payload.id)
         }
     },
     actions: {

@@ -408,7 +408,7 @@
                 font-bold
                 block
               "
-              to="/landing"
+              to="/admin/sessions"
             >
               <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
               Liste
@@ -426,7 +426,7 @@
                 font-bold
                 block
               "
-              to="/profile"
+              to="/admin/add-sessions"
             >
               <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
               Ajouter

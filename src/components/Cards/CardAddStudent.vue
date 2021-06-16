@@ -94,10 +94,10 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                Nom d'utilisateur
+                email
               </label>
               <input
-                type="text"
+                type="email"
                 class="
                   border-0
                   px-3
@@ -116,7 +116,7 @@
                   duration-150
                 "
                 placeholder="abdou.hamada"
-                v-model="username"
+                v-model="email"
               />
             </div>
           </div>
@@ -316,7 +316,7 @@
                   duration-150
                 "
                 placeholder="06 39"
-                v-model="phonenumber"
+                v-model="phone"
               />
             </div>
           </div>
@@ -414,7 +414,7 @@
         "
         @click="onClickSubmit"
       >
-        Ajouter instructeur
+        Ajouter élève
       </button>
     </div>
   </div>
@@ -431,12 +431,12 @@ export default {
       lastname: "",
       firstname: "",
       birthday: "1999-12-31",
-      username: "",
+      email: "",
       street: "",
       city: "",
       country: "France",
       postalcode: "976",
-      phonenumber: "06 39",
+      phone: "06 39",
       bio: "",
     };
   },
@@ -446,13 +446,14 @@ export default {
         lastname: this.lastname,
         firstname: this.firstname,
         birthday: this.birthday,
-        username: this.username,
+        email: this.email,
         street: this.street,
         city: this.city,
         country: this.country,
         postalcode: this.postalcode,
-        phonenumber: this.phonenumber,
+        phone: this.phone,
         bio: this.bio,
+        is_student: true
       };
       console.log(payload);
       this.$store.commit("addStudent", { payload });

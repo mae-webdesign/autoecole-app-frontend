@@ -94,7 +94,7 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                Nom d'utilisateur
+                Email
               </label>
               <input
                 type="text"
@@ -116,7 +116,7 @@
                   duration-150
                 "
                 placeholder="abdou.hamada"
-                v-model="username"
+                v-model="email"
               />
             </div>
           </div>
@@ -316,7 +316,7 @@
                   duration-150
                 "
                 placeholder="06 39"
-                v-model="phonenumber"
+                v-model="phone"
               />
             </div>
           </div>
@@ -398,13 +398,13 @@ export default {
     return {
       lastname: "",
       firstname: "",
-      birthday: "1999-12-31",
-      username: "",
+      birthday: "",
+      email: "",
       street: "",
       city: "",
       country: "France",
       postalcode: "976",
-      phonenumber: "06 39",
+      phone: "06 39",
       bio: ""
     };
   },
@@ -414,15 +414,15 @@ export default {
         lastname: this.lastname,
         firstname: this.firstname,
         birthday: this.birthday,
-        username: this.username,
+        email: this.email,
         street: this.street,
         city: this.city,
         country: this.country,
         postalcode: this.postalcode,
-        phonenumber: this.phonenumber,
+        phone: this.phone,
         bio: this.bio,
+        is_instructor: true,
       }
-      console.log(payload)
       this.$store.commit("addInstructor", {payload});
       this.$store.commit("updateListInstructor");
     },
