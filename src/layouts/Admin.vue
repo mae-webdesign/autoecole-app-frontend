@@ -25,13 +25,9 @@ export default {
     FooterAdmin,
   },
   mounted() {
-      this.$nextTick(function () {
-    // Code that will run only after the
-    // entire view has been rendered
-    this.$store.commit("updateListInstructor");
-    this.$store.commit("updateListStudents");
-    this.$store.commit("updateListSessions");
-  })
-  }
+    this.$store.dispatch("getListInstructors");
+    this.$store.dispatch("getListStudent");
+    this.$store.dispatch("getListSession");
+  },
 };
 </script>
