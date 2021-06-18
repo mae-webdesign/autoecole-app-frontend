@@ -16,9 +16,12 @@ export default {
         }
     },
     actions: {
-        getListInstructors({ commit }) {
-            commit("updateListInstructor")
-        }
+        async getListInstructors({ commit }) {
+            await commit("updateListInstructor")
+        },
+        async addInstructor({ commit }, payload) {
+            await commit("updateListInstructor", payload)
+        }, 
     },
     getters: {
         instructorCount: (state) => {

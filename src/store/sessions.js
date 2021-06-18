@@ -2,7 +2,7 @@ import { instance } from "../service/axios.js"
 
 export default {
     state: {
-        listStudents: null,
+        listStudents: [],
     },
     mutations: {
         updateListSessions: async (state) => {
@@ -13,13 +13,11 @@ export default {
         }
     },
     actions: {
-        getListSession({ commit }) {
-            commit("updateListSessions")
+        async getListSession({ commit }) {
+            await commit("updateListSessions")
         }
     },
     getters: {
-        studentCount: (state) => {
-            return state.listStudents.length;
-        }
+ 
     }
 }
