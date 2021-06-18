@@ -456,8 +456,8 @@ export default {
         is_student: true
       };
       console.log(payload);
-      this.$store.commit("addStudent", { payload });
-      this.$store.commit("updateListStudents");
+      this.$store.dispatch("addStudent", payload);
+      this.$store.dispatch("getListStudent");
     },
   },
 };

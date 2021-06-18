@@ -201,8 +201,8 @@ export default {
         bio: this.bio,
       };
       console.log(payload);
-      this.$store.commit("addStudent", { payload });
-      this.$store.commit("updateListStudents");
+      // this.$store.commit("addStudent", { payload });
+      // this.$store.coommit("updateListStudents");
     },
   },
 };
