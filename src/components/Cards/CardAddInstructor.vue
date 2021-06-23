@@ -423,8 +423,8 @@ export default {
         bio: this.bio,
         is_instructor: true,
       }
-      this.$store.disptach("addInstructor", payload);
-      this.$store.disptach("getListStudent");
+      this.$store.commit("addInstructor", {payload});
+      this.$store.commit("updateListInstructor");
     },
   },
 };

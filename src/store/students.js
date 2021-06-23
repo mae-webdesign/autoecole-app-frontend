@@ -1,6 +1,7 @@
 import { instance } from "../service/axios.js"
 
 export default {
+    namespaced: true,
     state: {
         listStudents: null,
     },
@@ -20,9 +21,4 @@ export default {
             await instance.post("/students/", payload)
         }
     },
-    getters: {
-        studentCount: (state) => {
-            return state.listStudents.length;
-        }
-    }
 }

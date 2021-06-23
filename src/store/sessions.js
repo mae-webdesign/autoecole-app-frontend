@@ -1,6 +1,7 @@
 import { instance } from "../service/axios.js"
 
 export default {
+    namespaced: true,
     state: {
         listStudents: [],
     },

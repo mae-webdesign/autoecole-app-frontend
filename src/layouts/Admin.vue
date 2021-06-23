@@ -25,9 +25,9 @@ export default {
     FooterAdmin,
   },
   mounted() {
-    this.$store.dispatch("getListInstructors");
-    this.$store.dispatch("getListStudent");
-    this.$store.dispatch("getListSession");
+    this.$store.dispatch("store_instructor/getListInstructors");
+    this.$store.dispatch("store_student/getListStudent");
+    this.$store.dispatch("store_sessions/getListSession");
   },
 };
 </script>

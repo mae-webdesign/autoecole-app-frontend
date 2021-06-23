@@ -1,6 +1,7 @@
 import { instance } from "../service/axios.js"
 
 export default {
+    namespaced: true,
     state: {
         listInstructors: null,
     },
@@ -8,10 +9,10 @@ export default {
         updateListInstructor: async (state) => {
             state.listInstructors = (await instance.get("/instructors/")).data;
         },
-        addInstructor: async (state, {payload}) => {
+        addInstructor: async (state, { payload }) => {
             await instance.post("/instructors/", payload)
         },
-        deleteInstructor: async (state, {payload}) => {
+        deleteInstructor: async (state, { payload }) => {
             await instance.delete("/instructors/" + payload.id)
         }
     },
@@ -21,11 +22,6 @@ export default {
         },
         async addInstructor({ commit }, payload) {
             await commit("updateListInstructor", payload)
-        }, 
-    },
-    getters: {
-        instructorCount: (state) => {
-            return state.listInstructors.length;
-        }
+        },
     }
 }

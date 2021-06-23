@@ -1,10 +1,13 @@
 import { createApp } from "vue";
 import { createWebHistory, createRouter } from "vue-router";
 import {default as store} from "./store/index.js"
-// styles
+import PrimeVue from 'primevue/config';
+import AutoComplete from 'primevue/autocomplete';
 
+// styles
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/assets/styles/tailwind.css";
+
 
 // mouting point for the whole app
 
@@ -125,5 +128,9 @@ const router = createRouter({
   routes,
 });
 
-createApp(App).use(router).use(store).mount("#app");
-// createApp(App).use(router).mount("#app");
+const app = createApp(App)
+app.use(router)
+app.use(store)
+app.use(PrimeVue)
+app.component("AutoComplete", AutoComplete)
+app.mount("#app")

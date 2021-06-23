@@ -32,12 +32,19 @@
               >
                 Moniteur
               </label>
-              <select v-model="selected" class="w-full">
-                <option>Choisissez</option>
-                <option>9:00</option>
-                <option>10:00</option>
-                <option>11:00</option>
-              </select>
+              <AutoComplete
+                v-model="selectedInstructor"
+                :suggestions="filteredInstructorsBasic"
+                @complete="searchInstructor($event)"
+                field="item.field"
+                :dropdown="true"
+              />
+              <!-- <Dropdown
+                v-model="selectedInstructor"
+                :options="this.listInstructor"
+                optionLabel="firstname"
+                :filter="true"
+              /> -->
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -48,12 +55,27 @@
               >
                 ÉLève
               </label>
-              <select v-model="selected" class="w-full">
-                <option>Choisissez</option>
-                <option>9:00</option>
-                <option>10:00</option>
-                <option>11:00</option>
-              </select>
+              <AutoComplete
+                v-model="selectedStudent"
+                :suggestions="filteredStudentsBasic"
+                @complete="searchStudent($event)"
+                field="item.field"
+              />
+              <div
+              >
+                null
+                <Dropdown />
+              </div>
+              <div>
+                zero
+                <Dropdown />
+                <!-- <Dropdown v-model="selectedStudent" :options="listStudent" optionLabel="name" placeholder="Select a Student" /> -->
+              </div>
+              <div>
+                <Dropdown />
+                <!-- <Dropdown placeholder="Select a City" /> -->
+              </div>
+              <!-- TODO implement fuzzy search -->
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -96,15 +118,10 @@
               >
                 Heure
               </label>
-              <select v-model="selected" class="w-full">
-                <option>Choisissez</option>
-                <option>9:00</option>
-                <option>10:00</option>
-                <option>11:00</option>
-              </select>
+              <AutoComplete />
             </div>
           </div>
-                    <div class="w-full lg:w-12/12 px-4">
+          <div class="w-full lg:w-12/12 px-4">
             <div class="relative w-full mb-3">
               <label
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -167,11 +184,12 @@
 </template>
 
 <script>
-// import FileDrop from "@/components/Misc/FileDrop.vue";
+import Fuse from "fuse.js";
+import Dropdown from "primevue/dropdown";
+import { mapState } from "vuex";
+
 export default {
-  components: {
-    // FileDrop,
-  },
+  components: { Dropdown },
   data() {
     return {
       lastname: "",
@@ -184,25 +202,68 @@ export default {
       postalcode: "976",
       phone: "06 39",
       bio: "",
+      selectedInstructor: "",
+      selectedStudent: "",
+      filteredInstructorsBasic: [],
+      filteredStudentsBasic: [],
     };
+  },
+  computed: {
+    ...mapState({
+      listInstructor: (state) => state.store_instructor.listInstructors,
+      listStudent: (state) => state.store_student.listStudents,
+    }),
   },
   methods: {
     onClickSubmit() {
-      const payload = {
-        lastname: this.lastname,
-        firstname: this.firstname,
-        birthday: this.birthday,
-        username: this.username,
-        street: this.street,
-        city: this.city,
-        country: this.country,
-        postalcode: this.postalcode,
-        phone: this.phone,
-        bio: this.bio,
-      };
-      console.log(payload);
+      // const payload = {
+      //   lastname: this.lastname,
+      //   firstname: this.firstname,
+      //   birthday: this.birthday,
+      //   username: this.username,
+      //   street: this.street,
+      //   city: this.city,
+      //   country: this.country,
+      //   postalcode: this.postalcode,
+      //   phone: this.phone,
+      //   bio: this.bio,
+      // };
       // this.$store.commit("addStudent", { payload });
-      // this.$store.coommit("updateListStudents");
+      // this.$store.dispatch("store_instructor/getListInstructors");
+    },
+    searchInstructor(event) {
+      const options = {
+        keys: ["lastname", "firstname"],
+      };
+      const fuse = new Fuse(this.listInstructor, options);
+
+      // Change the pattern
+      const pattern = event.query;
+
+      const result_search = fuse.search(pattern);
+
+      result_search.forEach((elem) => {
+        elem.item.field = elem.item.firstname + " " + elem.item.lastname;
+      });
+      this.filteredInstructorsBasic = [...result_search];
+      return;
+    },
+    searchStudent(event) {
+      const options = {
+        keys: ["lastname", "firstname"],
+      };
+      const fuse = new Fuse(this.listStudent, options);
+
+      // Change the pattern
+      const pattern = event.query;
+
+      const result_search = fuse.search(pattern);
+
+      result_search.forEach((elem) => {
+        elem.item.field = elem.item.firstname + " " + elem.item.lastname;
+      });
+      this.filteredStudentsBasic = [...result_search];
+      return;
     },
   },
 };
