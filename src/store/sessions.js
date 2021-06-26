@@ -6,16 +6,25 @@ export default {
         listStudents: [],
     },
     mutations: {
-        updateListSessions: async (state) => {
-            state.listStudents = (await instance.get("/sessions/")).data;
+        updateListSessions: (state, newListStudent) => {
+            state.listStudents = newListStudent;
         },
-        addStudent: async (state, {payload}) => {
-            await instance.post("/students/", payload)
-        }
     },
     actions: {
         async getListSession({ commit }) {
-            await commit("updateListSessions")
+            try {
+                const newListStudent = (await instance.get("/sessions/")).data;
+                await commit("updateListSessions", newListStudent)
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        addSession: async (state, {payload}) => {
+            try {
+                await instance.post("/sessions/", payload)
+            } catch (error) {
+                console.log(error)
+            }
         }
     },
     getters: {

@@ -3,22 +3,35 @@ import { instance } from "../service/axios.js"
 export default {
     namespaced: true,
     state: {
-        listStudents: null,
+        listStudents: [],
     },
     mutations: {
-        updateListStudents: async (state) => {
-            state.listStudents = (await instance.get("/students/")).data;
+        updateListStudents: (state, newListStudent) => {
+            state.listStudents = newListStudent;
         },
         addStudent: async (state, { payload }) => {
-            await instance.post("/students/", payload)
+            try {
+                await instance.post("/students/", payload)
+            } catch (error) {
+                console.log(error)
+            }
         }
     },
     actions: {
         async getListStudent({ commit }) {
-            await commit("updateListStudents")
+            try { 
+                (await instance.get("/students/")).data;
+                await commit("updateListStudents")
+            } catch (error) {
+                console.log(error)
+            }
         },
         async addStudent (state, { payload }) {
-            await instance.post("/students/", payload)
+            try {
+                await instance.post("/students/", payload)
+            } catch (error) {
+                console.log(error)
+            }
         }
     },
 }
