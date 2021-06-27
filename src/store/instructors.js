@@ -14,6 +14,7 @@ export default {
         async getListInstructors({ commit }) {
             try {
                 const newListInstructor = await instance.get("/instructors/");
+                newListInstructor.data.map(item => item.complete_name = item.firstname + " " + item.lastname )
                 await commit("updateListInstructor", newListInstructor.data)
             } catch (error) {
                 console.log(error)
@@ -28,8 +29,5 @@ export default {
         },
     },
     getters: {
-        getterListInstructor(state) {
-            return state.listInstructors
-        }
     }
 }

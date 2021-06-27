@@ -13,8 +13,8 @@ export default {
     actions: {
         async getListSession({ commit }) {
             try {
-                const newListStudent = (await instance.get("/sessions/")).data;
-                await commit("updateListSessions", newListStudent)
+                const newListStudent = await instance.get("/sessions/");
+                await commit("updateListSessions", newListStudent.data);
             } catch (error) {
                 console.log(error)
             }

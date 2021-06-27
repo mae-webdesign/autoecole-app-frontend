@@ -14,6 +14,7 @@ export default {
         async getListStudent({ commit }) {
             try { 
                 const listStudent = await instance.get("/students/");
+                listStudent.data.map(item => item.complete_name = item.firstname + " " + item.lastname )
                 commit("updateListStudents", listStudent.data)
             } catch (error) {
                 console.log(error)
