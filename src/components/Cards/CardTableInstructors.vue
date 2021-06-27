@@ -22,28 +22,64 @@
             Instructeurs
           </h3>
         </div>
-            <router-link
-              to="/admin/add-instructor"
-              v-slot="{ href, navigate, isActive }"
-            >
-              <a
-                :href="href"
-                @click="navigate"
-                class="text-xs uppercase py-3 font-bold block"
-                :class="[
-                  isActive
-                    ? 'text-emerald-500 hover:text-emerald-600'
-                    : 'text-blueGray-700 hover:text-blueGray-500',
-                ]"
-              >
-          <button
-          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-          type="button"
+        <router-link
+          to="/admin/add-instructor"
+          v-slot="{ href, navigate, isActive }"
         >
-            Ajouter instructeur
-        </button>
-              </a>
-            </router-link>
+          <a
+            :href="href"
+            @click="navigate"
+            class="text-xs uppercase py-3 font-bold block"
+            :class="[
+              isActive
+                ? 'text-emerald-500 hover:text-emerald-600'
+                : 'text-blueGray-700 hover:text-blueGray-500',
+            ]"
+          >
+            <div class="relative w-auto pl-4 flex-initial">
+              <div
+                class="
+                  text-white
+                  p-3
+                  text-center
+                  inline-flex
+                  items-center
+                  justify-center
+                  w-12
+                  h-12
+                  shadow-lg
+                  rounded-full
+                  bg-emerald-500
+                "
+              >
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </a>
+        </router-link>
+        <div class="relative w-auto pl-4 flex-initial">
+          <button class="focus:outline-none"
+            @click="this.$store.dispatch('store_instructor/getListInstructors')"
+          >
+            <div
+              class="
+                text-white
+                p-3
+                text-center
+                inline-flex
+                items-center
+                justify-center
+                w-12
+                h-12
+                shadow-lg
+                rounded-full
+                bg-emerald-500
+              "
+            >
+              <i class="fas fa-redo"></i>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div class="block w-full overflow-x-auto">
@@ -135,27 +171,6 @@
             >
               Nombre d'étudiants
             </th>
-            <!-- <th
-              class="
-                px-6
-                align-middle
-                border border-solid
-                py-3
-                text-xs
-                uppercase
-                border-l-0 border-r-0
-                whitespace-nowrap
-                font-semibold
-                text-left
-              "
-              :class="[
-                color === 'light'
-                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-              ]"
-            >
-              Completion
-            </th> -->
             <th
               class="
                 px-6
@@ -199,7 +214,7 @@
                   color === 'light' ? 'text-blueGray-600' : 'text-white',
                 ]"
               >
-                {{elem.firstname}} {{elem.lastname}}
+                {{ elem.firstname }} {{ elem.lastname }}
               </span>
             </th>
             <td
@@ -213,7 +228,7 @@
                 p-4
               "
             >
-              {{elem.phone}}
+              {{ elem.phone }}
             </td>
             <td
               class="
@@ -227,7 +242,7 @@
               "
             >
               <i class="fa fa-messages text-orange-500 mr-2"></i>
-              {{elem.email}}
+              {{ elem.email }}
             </td>
             <td
               class="
@@ -244,39 +259,6 @@
                 <div>1</div>
               </div>
             </td>
-            <!-- <td -->
-              <!-- class="
-                border-t-0
-                px-6
-                align-middle
-                border-l-0 border-r-0
-                text-xs
-                whitespace-nowrap
-                p-4
-              " -->
-            <!-- > -->
-              <!-- <div class="flex items-center">
-                <span class="mr-2">60%</span>
-                <div class="relative w-full">
-                  <div
-                    class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
-                  >
-                    <div
-                      style="width: 60%"
-                      class="
-                        shadow-none
-                        flex flex-col
-                        text-center
-                        whitespace-nowrap
-                        text-white
-                        justify-center
-                        bg-red-500
-                      "
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </td> -->
             <td
               class="
                 border-t-0
@@ -303,9 +285,7 @@ import TableDropdown from "@/components/Dropdowns/TableDropdown.vue";
 
 export default {
   data() {
-    return {
-      
-    };
+    return {};
   },
   computed: {
     ...mapState({
@@ -315,8 +295,7 @@ export default {
   components: {
     TableDropdown,
   },
-  methods: {
-  },
+  methods: {},
   props: {
     color: {
       default: "light",
@@ -326,7 +305,6 @@ export default {
       },
     },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
