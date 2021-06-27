@@ -9,20 +9,6 @@ export default {
         updateListInstructor: (state, newListInstructor) => {
                 state.listInstructors = newListInstructor
         },
-        addInstructor: async (state, { payload }) => {
-            try {
-                await instance.post("/instructors/", payload)
-            } catch (error) {
-                console.log(error)
-            }
-        },
-        deleteInstructor: async (state, { payload }) => {
-            try {
-                await instance.delete("/instructors/" + payload.id)
-            } catch (error) {
-                console.log(error)
-            }
-        }
     },
     actions: {
         async getListInstructors({ commit }) {
@@ -33,11 +19,12 @@ export default {
                 console.log(error)
             }
         },
-        async addInstructor({ commit }, payload) {
+        // eslint-disable-next-line
+        async addInstructor({commit}, payload) {
             try {
-                await commit("updateListInstructor", payload)
+                await instance.post("/instructors/", payload);
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         },
     },
@@ -45,6 +32,5 @@ export default {
         getterListInstructor(state) {
             return state.listInstructors
         }
-
     }
 }
