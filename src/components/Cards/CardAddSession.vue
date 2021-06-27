@@ -32,19 +32,14 @@
               >
                 Moniteur
               </label>
-              <AutoComplete
-                v-model="selectedInstructor"
-                :suggestions="filteredInstructorsBasic"
-                @complete="searchInstructor($event)"
-                field="item.field"
-                :dropdown="true"
-              />
-              <!-- <Dropdown
+              <Dropdown
                 v-model="selectedInstructor"
                 :options="this.listInstructor"
-                optionLabel="firstname"
+                optionLabel="complete_name"
+                placeholder="Sélectionner un moniteur"
                 :filter="true"
-              /> -->
+                filterPlaceholder="Taper pour filtrer"
+              />
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -55,27 +50,14 @@
               >
                 ÉLève
               </label>
-              <AutoComplete
+              <Dropdown
                 v-model="selectedStudent"
-                :suggestions="filteredStudentsBasic"
-                @complete="searchStudent($event)"
-                field="item.field"
+                :options="this.listStudent"
+                optionLabel="complete_name"
+                placeholder="Sélectionner un élève"
+                :filter="true"
+                filterPlaceholder="Taper pour filtrer"
               />
-              <div
-              >
-                null
-                <Dropdown />
-              </div>
-              <div>
-                zero
-                <Dropdown />
-                <!-- <Dropdown v-model="selectedStudent" :options="listStudent" optionLabel="name" placeholder="Select a Student" /> -->
-              </div>
-              <div>
-                <Dropdown />
-                <!-- <Dropdown placeholder="Select a City" /> -->
-              </div>
-              <!-- TODO implement fuzzy search -->
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -105,8 +87,8 @@
                   transition-all
                   duration-150
                 "
-                placeholder="abdou.hamada"
-                v-model="username"
+                placeholder="2021-01-01"
+                v-model="date"
               />
             </div>
           </div>
@@ -149,7 +131,7 @@
                   duration-150
                 "
                 placeholder="Route Nationale 2"
-                v-model="street"
+                v-model="location"
               />
             </div>
           </div>
@@ -177,35 +159,28 @@
         "
         @click="onClickSubmit"
       >
-        Ajouter instructeur
+        Ajouter session
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import Fuse from "fuse.js";
-import Dropdown from "primevue/dropdown";
 import { mapState } from "vuex";
+import Dropdown from "primevue/dropdown";
 
 export default {
-  components: { Dropdown },
+  components: {
+    Dropdown,
+  },
   data() {
     return {
-      lastname: "",
-      firstname: "",
-      birthday: "1999-12-31",
-      username: "",
-      street: "",
-      city: "",
-      country: "France",
-      postalcode: "976",
-      phone: "06 39",
-      bio: "",
       selectedInstructor: "",
       selectedStudent: "",
       filteredInstructorsBasic: [],
       filteredStudentsBasic: [],
+      location: "",
+      date: "",
     };
   },
   computed: {
@@ -216,54 +191,7 @@ export default {
   },
   methods: {
     onClickSubmit() {
-      // const payload = {
-      //   lastname: this.lastname,
-      //   firstname: this.firstname,
-      //   birthday: this.birthday,
-      //   username: this.username,
-      //   street: this.street,
-      //   city: this.city,
-      //   country: this.country,
-      //   postalcode: this.postalcode,
-      //   phone: this.phone,
-      //   bio: this.bio,
-      // };
-      // this.$store.commit("addStudent", { payload });
-      // this.$store.dispatch("store_instructor/getListInstructors");
-    },
-    searchInstructor(event) {
-      const options = {
-        keys: ["lastname", "firstname"],
-      };
-      const fuse = new Fuse(this.listInstructor, options);
 
-      // Change the pattern
-      const pattern = event.query;
-
-      const result_search = fuse.search(pattern);
-
-      result_search.forEach((elem) => {
-        elem.item.field = elem.item.firstname + " " + elem.item.lastname;
-      });
-      this.filteredInstructorsBasic = [...result_search];
-      return;
-    },
-    searchStudent(event) {
-      const options = {
-        keys: ["lastname", "firstname"],
-      };
-      const fuse = new Fuse(this.listStudent, options);
-
-      // Change the pattern
-      const pattern = event.query;
-
-      const result_search = fuse.search(pattern);
-
-      result_search.forEach((elem) => {
-        elem.item.field = elem.item.firstname + " " + elem.item.lastname;
-      });
-      this.filteredStudentsBasic = [...result_search];
-      return;
     },
   },
 };
