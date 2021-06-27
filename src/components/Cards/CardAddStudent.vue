@@ -453,11 +453,8 @@ export default {
         postalcode: this.postalcode,
         phone: this.phone,
         bio: this.bio,
-        is_student: true
       };
-      console.log(payload);
-      this.$store.dispatch("addStudent", payload);
-      this.$store.dispatch("getListStudent");
+      this.$store.dispatch("store_student/addStudent", payload);
     },
   },
 };
