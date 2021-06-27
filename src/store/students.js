@@ -9,24 +9,17 @@ export default {
         updateListStudents: (state, newListStudent) => {
             state.listStudents = newListStudent;
         },
-        addStudent: async (state, { payload }) => {
-            try {
-                await instance.post("/students/", payload)
-            } catch (error) {
-                console.log(error)
-            }
-        }
     },
     actions: {
         async getListStudent({ commit }) {
             try { 
-                (await instance.get("/students/")).data;
-                await commit("updateListStudents")
+                const listStudent = await instance.get("/students/");
+                commit("updateListStudents", listStudent.data)
             } catch (error) {
                 console.log(error)
             }
         },
-        async addStudent (state, { payload }) {
+        async addStudent (state, payload) {
             try {
                 await instance.post("/students/", payload)
             } catch (error) {
