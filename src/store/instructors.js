@@ -19,8 +19,7 @@ export default {
                 console.log(error)
             }
         },
-        // eslint-disable-next-line
-        async addInstructor({commit}, payload) {
+        async addInstructor(state, payload) {
             try {
                 await instance.post("/instructors/", payload);
             } catch (error) {
