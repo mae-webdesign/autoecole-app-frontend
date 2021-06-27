@@ -421,7 +421,6 @@ export default {
         postalcode: this.postalcode,
         phone: this.phone,
         bio: this.bio,
-        is_instructor: true,
       }
       this.$store.dispatch("store_instructor/addInstructor", payload);
     },
