@@ -87,8 +87,8 @@
                   transition-all
                   duration-150
                 "
-                placeholder="2021-01-01"
                 v-model="date"
+                @blur="onBlurDate"
               />
             </div>
           </div>
@@ -100,7 +100,12 @@
               >
                 Heure
               </label>
-              <AutoComplete />
+              <Dropdown
+                v-model="selectedHour"
+                :options="this.listStudent"
+                optionLabel="complete_name"
+                placeholder="Sélectionner une heure"
+              />
             </div>
           </div>
           <div class="w-full lg:w-12/12 px-4">
@@ -177,10 +182,11 @@ export default {
     return {
       selectedInstructor: "",
       selectedStudent: "",
+      selectedHour: null,
       filteredInstructorsBasic: [],
       filteredStudentsBasic: [],
       location: "",
-      date: "",
+      date: new Date().toISOString().slice(0, 10),
     };
   },
   computed: {
@@ -190,9 +196,13 @@ export default {
     }),
   },
   methods: {
-    onClickSubmit() {
-
+    onClickSubmit() {},
+    onBlurDate() {
+      console.log(this.date);
     },
+    getHour: async () => {
+      
+    }
   },
 };
 </script>
