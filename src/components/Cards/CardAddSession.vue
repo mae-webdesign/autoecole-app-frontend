@@ -102,8 +102,7 @@
               </label>
               <Dropdown
                 v-model="selectedHour"
-                :options="this.listStudent"
-                optionLabel="complete_name"
+                :options="this.listHour"
                 placeholder="Sélectionner une heure"
               />
             </div>
@@ -180,29 +179,43 @@ export default {
   },
   data() {
     return {
-      selectedInstructor: "",
-      selectedStudent: "",
-      selectedHour: null,
+      selectedInstructor: {},
+      selectedStudent: {},
+      selectedHour: this.listHour,
       filteredInstructorsBasic: [],
       filteredStudentsBasic: [],
       location: "",
-      date: new Date().toISOString().slice(0, 10),
+      date: this.nextDay(),
     };
   },
   computed: {
     ...mapState({
       listInstructor: (state) => state.store_instructor.listInstructors,
       listStudent: (state) => state.store_student.listStudents,
+      listHour: (state) => state.store_schedule.list_hour.hour,
     }),
   },
   methods: {
     onClickSubmit() {},
     onBlurDate() {
-      console.log(this.date);
+      const payload = {
+        date: this.date,
+        instructor_id: this.selectedInstructor.id
+      }
+      this.$store.dispatch("store_schedule/getListHour", payload);
     },
-    getHour: async () => {
-      
-    }
+    getHour: () => {
+      const payload = {
+        date: this.date,
+        instructor_id: this.selectedInstructor.id
+      }
+      this.$store.dispatch("store_schedule/getListHour", payload);
+    },
+    nextDay: () => {
+        var result = new Date();
+        result.setDate(result.getDate() + 2);
+        return result.toISOString().slice(0, 10);
+      }
   },
 };
 </script>

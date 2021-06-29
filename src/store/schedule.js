@@ -13,8 +13,9 @@ export default {
     actions: {
         async getListHour({ commit }, payload) {
             try {
+                console.log(payload)
                 const newAvailableSchedule = await instance.get("/schedules/" + payload.instructor_id + "/" + payload.date + "/")
-                await commit("SET_LIST_HOUR", newAvailableSchedule.data);
+                commit("SET_LIST_HOUR", newAvailableSchedule.data);
             } catch (error) {
                 console.log(error)
             }
